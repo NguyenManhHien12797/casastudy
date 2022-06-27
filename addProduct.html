@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AddProduct</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .text {
+            width: 30%;
+            border: 1px solid #ddd;
+            margin: auto;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 2px 2px 5px #ddd;
+        }
+        .text label, input{
+            width: 100%;
+            display: block;
+        }
+        .text label{
+            margin-top: 20px;
+
+        }
+        .text input{
+            margin-top: 5px;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .text button{
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 1px solid #ddd ;
+            border-radius:5px ;
+            background-color: #F7442E;
+            color: #fff;
+        }
+        .text button:hover{
+            background-color:#c53624 ;
+        }
+        .addProduct video{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        .text{
+            position: relative;
+            z-index: 10;
+            font-size: 1.1em;
+            color: #fff;
+            font-weight: 400;
+            max-width: 700px;
+        }
+        .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            mix-blend-mode: overlay;
+        }
+    </style>
+
+
+    <script src="travel website/js/createProduct.js"></script>
+    <script src="travel website/js/createId.js"></script>
+    <script src="travel website/js/createProductTravel.js"></script>
+</head>
+<body>
+<section class="addProduct">
+    <video src="vd2.mp4" muted loop autoplay></video>
+    <div class="overlay"></div>
+    <div class="text">
+        <label for="images">Hình ảnh sản phẩm</label>
+        <input id="images">
+        <label for="name">Tên sản phẩm</label>
+        <input id="name">
+        <label for="price">Giá</label>
+        <input id="price">
+        <button onclick="onclickCreateProduct()">Add Product</button>
+    </div>
+</section>
+<script>
+    let listProduct= JSON.parse(localStorage.getItem("listProduct"));
+    if(listProduct==null){
+        listProduct= new Array();
+    }
+    function onclickCreateProduct(){
+        let images=document.getElementById("images");
+        let img=images.value;
+        images.value="";
+        let productName=document.getElementById("name");
+        let name=productName.value;
+        productName.value="";
+        let productPrice=document.getElementById("price");
+        let price=productPrice.value;
+        productPrice.value=""
+        let product= createProduct(img,name,price,null);
+        console.log(product);
+        listProduct.push(product);
+        console.log(listProduct);
+        let jsonListProduct=JSON.stringify(listProduct);
+        localStorage.setItem("listProduct",jsonListProduct)
+        alert("Thêm sản phẩm thành công")
+    }
+</script>
+
+</body>
+</html>

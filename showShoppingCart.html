@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://kit.fontawesome.com/bb6a3cf0b7.js" crossorigin="anonymous"></script>
+    <style>
+
+    </style>
+    <script src="travel website/js/shoppingCart.js"></script>
+    <script src="travel website/js/createProductTravel.js"></script>
+    <link rel="stylesheet" href="travel website/css/showShoppingCart.css">
+    <script src="travel website/js/createId.js"></script>
+
+
+</head>
+<body>
+<header class="header">
+    <a href="#" class="logo"> <i class="fas fa-hiking"></i> travel. </a>
+    <div class="icons">
+        <a href="index.html" class="fa-solid fa-house"></a>
+<!--        <a href="#shop" class="fas fa-shopping-cart"></a>-->
+    </div>
+
+</header>
+<div class="shoppingCart" id="shoppingCart">
+<h1 class="title">Danh Sách Sản Phẩm</h1>
+    <div class="itemShoppingCart">
+        <div class="images"></div>
+        <p class="name">Sản Phẩm</p>
+        <div class="price">Đơn Giá</div>
+        <p class="amount">Số Lượng</p>
+        <p class="totalMoney">Tổng Tiền</p>
+        <p class="action">Hành Động</p>
+    </div>
+</div>
+<!--b1: xây dựng layout cho 1 item giỏ hàng-->
+<!--b2: viet hàm chuyển đổi 1 đối tượng item giỏ hàng thành HTML đã xây dựng từ b1-->
+<!--b3: viết hàm chuyển đổi một danh sách item giỏ hàng-&ndash;&gt; HTML-->
+<!--b4: Gắn HTML danh sách item giỏ hàng vào nút trong HTML &#45;&#45;&ndash;&gt;-->
+<script>
+    showListItemShoppingCart();
+    function showListItemShoppingCart(){
+        // b1:lấy danh sách item giỏ hàng dưới localStorage lên
+        let listItemShoppingCart= getListShoppingCart();
+        //b2:chuyển ds item giỏ hàng thành HTML
+        let HTML=convertListItemShoppingToHTML(listItemShoppingCart);
+        //b3: truy cậ nút shoppingCart để hiển thị HTML ds item giỏ hàng lên
+        let nodeShopping= document.getElementById("shoppingCart");
+        nodeShopping.innerHTML=nodeShopping.innerHTML+HTML;
+
+    }
+    function  convertListItemShoppingToHTML(listShoppingCart){
+        let htmlTotal="";
+        for(let i=0; i< listShoppingCart.length;i++){
+            htmlTotal= htmlTotal+ convertItemShoppingCartToHTML(listShoppingCart[i]);
+        }
+        return htmlTotal;
+    }
+    // Chuyển 1 đối tượng thành html
+    // input: đối tượng giỏ hàng
+    // output HTML hiển thị item giỏ hàn
+    function convertItemShoppingCartToHTML(shoppingCart){
+        let product= getProductfromId(shoppingCart.idProduct);
+        console.log(product)
+        let total= product.price*shoppingCart.amount;
+        let html='<div class="itemShoppingCart">'+
+            '        <div class="images">'+
+            '            <img src="'+product.img+'" alt="">'+
+            '        </div>'+
+            '        <p class="name">'+product.name+'</p>'+
+            '        <div class="price">'+product.price+'</div>'+
+            '        <input type="number" class="amount" value="'+shoppingCart.amount+'">'+
+            '        <p class="totalMoney">'+total+'</p>'+
+            '        <div class="action" onclick="deleteProduct('+shoppingCart.idProduct+')"><i class="fa-solid fa-trash"></i></div>'+
+            '    </div>';
+        return html;
+    }
+
+    function deleteProduct(shoppingCart){
+        console.log(shoppingCart.idProduct)
+
+    }
+</script>
+</body>
+</html>

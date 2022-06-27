@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/createProduct.js"></script>
+    <style>
+        *{
+            box-sizing:border-box;
+            padding: 0;
+            margin: 0;
+        }
+        img{
+            width: 100%;
+        }
+        #product{
+          max-width: 1100px;
+            margin: auto;
+            margin-top: 40px;
+        }
+      #product .items{
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-gap: 20px;
+      }
+    </style>
+</head>
+<body>
+<section id="product">
+<!--    <div class="items">-->
+<!--        <div class="item">-->
+<!--            <div class="item-thumb">-->
+<!--                <img src="https://cdn.tgdd.vn/Products/Images/42/153856/iphone-xi-xanhla-200x200.jpg" alt="">-->
+<!--            </div>-->
+<!--            <h2 class="item-title">Iphone11</h2>-->
+<!--            <div class="item-price">-->
+<!--                <span class="item-price">50000000</span>-->
+<!--                <span class="item-price-sale">50000000</span>-->
+<!--            </div>-->
+<!--            <button class="btn btn-primary">Đưa vào giỏ hàng</button>-->
+<!--        </div>-->
+
+<!--        <div class="item">-->
+<!--            <div class="item-thumb">-->
+<!--                <img src="https://cdn.tgdd.vn/Products/Images/42/153856/iphone-xi-xanhla-200x200.jpg" alt="">-->
+<!--            </div>-->
+<!--            <h2 class="item-title">Iphone11</h2>-->
+<!--            <div class="item-price">-->
+<!--                <span class="item-price">50000000</span>-->
+<!--                <span class="item-price-sale">50000000</span>-->
+<!--            </div>-->
+<!--            <button class="btn btn-primary">Đưa vào giỏ hàng</button>-->
+<!--        </div>-->
+
+<!--        <div class="item">-->
+<!--            <div class="item-thumb">-->
+<!--                <img src="https://cdn.tgdd.vn/Products/Images/42/153856/iphone-xi-xanhla-200x200.jpg" alt="">-->
+<!--            </div>-->
+<!--            <h2 class="item-title">Iphone11</h2>-->
+<!--            <div class="item-price">-->
+<!--                <span class="item-price">50000000</span>-->
+<!--                <span class="item-price-sale">50000000</span>-->
+<!--            </div>-->
+<!--            <button class="btn btn-primary">Đưa vào giỏ hàng</button>-->
+<!--        </div>-->
+
+<!--        <div class="item">-->
+<!--            <div class="item-thumb">-->
+<!--                <img src="https://cdn.tgdd.vn/Products/Images/42/153856/iphone-xi-xanhla-200x200.jpg" alt="">-->
+<!--            </div>-->
+<!--            <h2 class="item-title">Iphone11</h2>-->
+<!--            <div class="item-price">-->
+<!--                <span class="item-price">50000000</span>-->
+<!--                <span class="item-price-sale">50000000</span>-->
+<!--            </div>-->
+<!--            <button class="btn btn-primary">Đưa vào giỏ hàng</button>-->
+<!--        </div>-->
+<!--  </div>-->
+</section>
+<script>
+    // b1:lấy ds từ localStorage
+    let jsonListProduct= localStorage.getItem("listProduct");
+    let listProduct= JSON.parse(jsonListProduct);
+    console.log(jsonListProduct)
+    // b2: chuyển danh sách đt sp sang HTML
+    let HTML= convertListProductToHTML(listProduct);
+    // gắn đoạn HTML vào secction
+    let nodeProduct= document.getElementById("product");
+    nodeProduct.innerHTML= HTML;
+</script>
+</body>
+</html>

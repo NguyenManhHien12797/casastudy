@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="travel website/js/createProductTravel.js"></script>
+    <script src="travel website/js/createId.js"></script>
+</head>
+<body>
+<input type="text" id="idProduct" placeholder="Nhap ID san pham">
+<button onclick="onClickGetProduct()" class="btn">Tim kiem</button>
+<div id="searchResults"></div>
+
+<script>
+    function onClickGetProduct(){
+        //b1: truy suat nuts idProduct de lay ra idProduct
+        let nodeIdProduct= document.getElementById("idProduct");
+        let idProduct=nodeIdProduct.value;
+        console.log("id san pham nhap vao la: "+ idProduct)
+        // b2: truy xuat doi tuong theo ID
+        let product= getProductToId(idProduct);
+        console.log(product);
+        let HTML= convertProductToHTML(product);
+        let nodeSearchResults= document.getElementById("searchResults");
+        nodeSearchResults.innerHTML= HTML;
+    }
+</script>
+</body>
+</html>
