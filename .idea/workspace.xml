@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25c34278-129d-40a9-ab0b-4b7241248d80" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/dssp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showShoppingCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/showShoppingCart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travel website/js/createProductTravel.js" beforeDir="false" afterPath="$PROJECT_DIR$/travel website/js/createProductTravel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/travel website/js/shoppingCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/travel website/js/shoppingCart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,17 +39,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Acer/OneDrive/Desktop/CG/Project/Md1/GitProject/source/bai 10/demo.html",
-    "list.type.of.created.stylesheet": "CSS",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Acer/OneDrive/Desktop/CG/Project/travel website&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -56,7 +59,8 @@
       <option name="presentableId" value="Default" />
       <updated>1656034614392</updated>
       <workItem from="1656034615487" duration="6428000" />
-      <workItem from="1656043636164" duration="78027000" />
+      <workItem from="1656043636164" duration="78200000" />
+      <workItem from="1656358342784" duration="19630000" />
     </task>
     <servers />
   </component>

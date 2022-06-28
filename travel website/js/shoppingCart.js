@@ -40,3 +40,6 @@ function saveListShoppingCartToLocalStorage(listShoppingCart){
     localStorage.setItem(keyLocalStorageShoppingCart,jsonListShoppingCart);
 
 }
+function deleteProduct(){
+
+}

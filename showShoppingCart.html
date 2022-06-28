@@ -72,15 +72,22 @@
             '        <div class="price">'+product.price+'</div>'+
             '        <input type="number" class="amount" value="'+shoppingCart.amount+'">'+
             '        <p class="totalMoney">'+total+'</p>'+
-            '        <div class="action" onclick="deleteProduct('+shoppingCart.idProduct+')"><i class="fa-solid fa-trash"></i></div>'+
+            '        <div class="action" onclick="del(\''+shoppingCart.idProduct+'\')"><i class="fa-solid fa-trash"></i></div>'+
             '    </div>';
         return html;
     }
-
-    function deleteProduct(shoppingCart){
-        console.log(shoppingCart.idProduct)
-
+function del(index){
+     let arr= getListShoppingCart()
+for(let i=0; i<arr.length;i++){
+    if(arr[i].idProduct==index){
+        arr.splice(i,1)
     }
+}
+    let jsonListProduct=JSON.stringify(arr);
+    localStorage.setItem("listShoppingCart",jsonListProduct)
+    showListItemShoppingCart()
+    location.reload()
+}
 </script>
 </body>
 </html>

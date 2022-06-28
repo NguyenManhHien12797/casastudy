@@ -80,6 +80,7 @@ function convertProductToHTML(product) {
 // từ id sản phẩm lấy lên đối tượng sản phẩm với đầy đủ các hàm bên trong
 //input: idProduct
 // output: product
+
 function  getProductfromId(idProduct){
     let product= new Object();
     let listProduct=getListProductFromLocalStorage();
